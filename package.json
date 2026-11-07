@@ -1,0 +1,29 @@
+{
+  "name": "saucedemo-cucumber-playwright",
+  "version": "1.0.0",
+  "description": "Cucumber BDD framework with Playwright and TypeScript for saucedemo.com",
+  "private": true,
+  "scripts": {
+    "install:browsers": "playwright install chromium",
+    "clean": "rimraf reports",
+    "typecheck": "tsc --noEmit",
+    "test": "node scripts/run-tests.js",
+    "test:smoke": "node scripts/run-tests.js smoke",
+    "test:sanity": "node scripts/run-tests.js sanity",
+    "test:regression": "node scripts/run-tests.js regression",
+    "test:headed": "cross-env HEADLESS=false node scripts/run-tests.js regression",
+    "test:headed:smoke": "cross-env HEADLESS=false node scripts/run-tests.js smoke",
+    "test:headed:sanity": "cross-env HEADLESS=false node scripts/run-tests.js sanity",
+    "test:headed:regression": "cross-env HEADLESS=false node scripts/run-tests.js regression",
+    "report": "node scripts/open-report.js"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "cross-env": "^7.0.3",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
